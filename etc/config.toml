@@ -1,0 +1,15 @@
+health-check-port = 8085
+consumer-brokers = ["192.168.1.209:9092"]
+producer-brokers = ["192.168.1.209:9092"]
+fetch-max-wait-time-millis = 1000
+thread-count = 4
+
+[[topic-mappings]]
+from = "test_1"
+to = "test_1_copy"
+use-offsets-from-dest = true
+
+[[topic-mappings]]
+from = "test_2"
+to = "test_2_copy"
+use-offsets-from-dest = true

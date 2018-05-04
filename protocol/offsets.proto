@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package protocol.offsets;
+
+message WithOriginalOffset {
+    // Tag is selected such that it doesn't clash with message tags of regular messages.
+    // This allows to concatenate encoded KafkaMessageSource with regular messages.
+    // Parsing the concatenation of two encoded messages produces exactly the same result
+    // as if you had parsed the two messages separately and merged the resulting objects.
+    int64 original_offset = 790;
+}
